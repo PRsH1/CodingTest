@@ -1,0 +1,55 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+
+
+public class Main {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		// TODO Auto-generated method stub
+		int count = 0;
+		int number;
+		Scanner input=new Scanner(System.in);
+	
+		StringBuffer str=new  StringBuffer();
+		
+		count=input.nextInt();
+		String []order=new String[count];
+		
+		LinkedList list=new LinkedList();
+	
+		for(int i=0; i<count; i++) {
+		
+			order[i]=input.next();
+			
+			if(order[i]=="push") {
+				int push=input.nextInt();
+				list.addFirstNode(push);
+			}
+		
+		}
+	
+		for(int i=0; i<count; i++) {
+			
+			
+			
+			if(order[i]=="top") {
+				str.append(list.top()).append("\n");
+			}
+			else if(order[i]=="pop") {
+				System.out.println(list.pop());
+			}
+			else if(order[i]=="size") {
+				System.out.println(list.size());
+			}
+			else if(order[i]=="empty") {
+				System.out.println(list.empty());
+			}
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,45 @@
+import java.util.*;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int count = 0;
+		int push;
+		int number;
+		Scanner input=new Scanner(System.in);
+		count=input.nextInt();
+		String []order=new String[count];
+		
+		LinkedList list=new LinkedList();
+	
+		for(int i=0; i<count; i++) {
+			order[i]=input.next();
+			if(order[i]=="push") {
+				push=input.nextInt();
+				list.addFirstNode(push);
+			}
+		}
+		for(int i=0; i<count; i++) {
+			
+			
+			if(order[i]=="top") {
+				System.out.println(list.top());
+			}
+			else if(order[i]=="pop") {
+				System.out.println(list.pop());
+			}
+			else if(order[i]=="size") {
+				System.out.println(list.size());
+			}
+			else if(order[i]=="empty") {
+				System.out.println(list.empty());
+			}
+		}
+		
+
+	}
+
+}
