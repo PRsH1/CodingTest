@@ -1,0 +1,37 @@
+import java.util.*;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a;
+		int b;
+		int total;
+		
+		Scanner scan=new Scanner(System.in);
+		a=scan.nextInt();
+		b=scan.nextInt();
+		if(a<b) {
+			System.out.print(gcd(b,a));
+		}
+		else 
+			System.out.print(gcd(a,b));
+		
+		
+
+	}
+	public static int gcd(int num1,int num2) {
+		int result;
+		if(num1%num2==0) {
+			return num2;
+		}
+		else {
+			result=num1%num2;
+			gcd(num2,result);
+		}
+		return num2;
+	}
+
+}

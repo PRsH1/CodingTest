@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\수업 리포트 저장용\수업 리포트 저장용\WorkSpaceCodeTest\.metadata\.plugins\org.eclipse.jdt.core
+3403210453.index
+2361772636.index
+1714060044.index
+1865797976.index
