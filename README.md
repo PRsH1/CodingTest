@@ -109,3 +109,75 @@ StringBuffer str=new  StringBuffer();  //stringBuffer를 이용하자
 
 스위치 문을 자주 사용하자
 
+
+
+## 소수
+
+
+#### 1. 백준 1978번 소수 찾기
+
+
+주어진 수들 중 소수를 찾는 문제이다
+
+소수란 1과 나 자신으로만 나누어 떨어지는 수를 말한다
+
+즉 양의 약수가 1과 나 자신으로만 이루어져 있는 수이다.
+
+소수는 1과 나 자신으로만 나누어 떨어지므로 
+
+어떤 숫자 n이 소수인지를 판별하기 위해선 2부터 n까지 1씩 증가하면서 나누어 떨어지는지 계산하면 된다
+
+만약 n이외에 나누어 떨어지는 숫자가 있으면 그 수는 소수가 아니고 n까지 가서 나누어 떨어졌을 땐 그 숫자는 소수이다.
+
+```java 
+
+
+for(int i=0; i<tryCount; i++) {
+	for(int j=2; j<=primeArray[i]; j++) {
+		if(primeArray[i]==0 || primeArray[i]==1)
+			break;
+		else if(primeArray[i]==j) {
+			primeCount++;
+			break;
+				}
+		else if(primeArray[i]%j==0) {
+			break;
+				}
+
+			}
+		}
+
+
+```
+
+위 코드의 시간복잡도는 O(n)이다.
+
+
+#### 2. 더 효율적인 방법에는 어떤게 있을까?
+
+바로 제곱근을 이용하는 것이다
+
+만약 어떤 수 n이 소수이기 위해선 그 수의 제곱근보다 크지 않은 모든 수로 나누어 떨어지지 않으면 된다.
+
+만약 n=23이라고 가정하면 23의 제곱근은 4.xxxx이므로 23을 2 3 4로 나누어보고 나누어 떨어지지 않으면 소수이다.
+
+```java
+
+for(int i=0; i<n; i++){
+	int k=input.nextInt();
+	boolean isPrime=true;
+	if(k==1)
+	    continue;//1은 소수가 아님
+	for(int j=2; j<Math.sqrt(k); j++){
+	if(k%j==0)
+		isPrime=false;
+		}
+	if(isPrime){
+		primeCount++;
+		}
+}
+	
+```
+
+
+탐색할 수를 확실히 줄이고 시간복잡도도 O(√n)로 줄인 것을 볼 수 있다.
