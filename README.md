@@ -169,12 +169,12 @@ for(int i=0; i<n; i++){
 	if(k==1)
 	    continue;//1은 소수가 아님
 	for(int j=2; j<Math.sqrt(k); j++){
-	if(k%j==0)
-		isPrime=false;
-		}
-	if(isPrime){
-		primeCount++;
-		}
+		if(k%j==0)
+			isPrime=false;
+			}
+		if(isPrime){
+			primeCount++;
+			}
 }
 	
 ```
