@@ -171,10 +171,10 @@ for(int i=0; i<n; i++){
 	for(int j=2; j<Math.sqrt(k); j++){
 		if(k%j==0)
 			isPrime=false;
-			}
-		if(isPrime){
-			primeCount++;
-			}
+	}
+	if(isPrime){
+		primeCount++;
+		}
 }
 	
 ```
